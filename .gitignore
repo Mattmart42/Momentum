@@ -1,0 +1,45 @@
+# Xcode
+*.xcworkspace/
+*.xcuserdata/
+*.xcscmblueprint
+
+# Derived data
+DerivedData/
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+/.swiftpm
+Package.resolved
+
+# CocoaPods
+Pods/
+*.lock
+
+# Carthage
+Carthage/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Archives
+*.xcarchive
+
+# Logs
+*.log
+*.tlog
+*.swp
+*.swo
+*.DS_Store
+
+# IDE configurations
+.idea/
+.vscode/
+
+# Generated schema
+*.xcscheme
