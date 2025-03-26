@@ -80,9 +80,22 @@ struct SpeechProcessingView: View {
         }
         .navigationTitle("Process Activity")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("Log Activity")
+                    .font(.system(size: 20, weight: .bold))
+                    .padding(.vertical, 5) // Adjust vertical padding
+            }
+        }
         .onAppear {
             // In Phase 2, we'll add logic to process the speech here
             print("Processing text: \(transcribedText)")
         }
+    }
+}
+
+struct SpeechProcessingView_Previews: PreviewProvider {
+    static var previews: some View {
+        SpeechProcessingView(transcribedText: "Transcribed Text")
     }
 }

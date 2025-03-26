@@ -133,15 +133,6 @@ struct LogActivityView: View {
                     .padding()
                     .cornerRadius(8)
                 }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Mic") {
-                        presentationMode.wrappedValue.dismiss()
-                    }
-                    .font(.headline)
-                    .foregroundColor(.red)
-                    .padding()
-                    .cornerRadius(8)
-                }
             }
             .sheet(isPresented: $showingDistancePicker) {
                 DistancePicker(distanceWhole: $distanceWhole, distanceDecimal: $distanceDecimal, distanceUnit: $distanceUnit)

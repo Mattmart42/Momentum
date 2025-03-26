@@ -15,6 +15,7 @@ import AVFoundation
 struct SpeechToTextView: View {
     @StateObject private var recognitionManager = SpeechRecognitionManager()
     @State private var navigateToEdit = false
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationStack {
@@ -81,6 +82,15 @@ struct SpeechToTextView: View {
             }
             .navigationTitle("Record Activity")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel") {
+                        dismiss()  // Use the dismiss action
+                    }
+                    .font(.headline)
+                    .foregroundColor(.red)
+                }
+            }
             .onDisappear {
                 if recognitionManager.isRecording {
                     recognitionManager.stopRecording()
@@ -102,5 +112,11 @@ struct SpeechToTextView: View {
         @unknown default:
             return "Speech recognition status unknown"
         }
+    }
+}
+
+struct SpeechToTextView_Previews: PreviewProvider {
+    static var previews: some View {
+        SpeechToTextView()
     }
 }
