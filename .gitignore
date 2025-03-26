@@ -43,3 +43,6 @@ fastlane/test_output/
 
 # Generated schema
 *.xcscheme
+
+# Firebase
+GoogleService-Info.plist
